@@ -31,5 +31,7 @@ class Wrapper:
 
     def decrypt(token, key):
         f = Fernet(key)
-        data = f.decrypt(token)
+        data = str(f.decrypt(token))
+        if data[0:2] == "b'":
+            data = data[2:-1]
         return data
