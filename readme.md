@@ -6,7 +6,7 @@
     pip install python-cryptography-fernet-wrapper
     ```
     ```python
-    from python-cryptography-fernet-wrapper.wrapper import wrapper as fernet_wrapper
+    from fernet_wrapper import wrapper as fernet_wrapper
     ```
 
 * Encrypt
