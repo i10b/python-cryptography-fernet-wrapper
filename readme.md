@@ -21,10 +21,10 @@
 
 * Generate random key
     ```python
-    fernet_wrapper.gen_key()
+    key = fernet_wrapper.gen_key()
     ```
 
 * Generate key from password
     ```python
-    fernet_wrapper.key_from_pass(password)
+    key = fernet_wrapper.key_from_pass(password)
     ```
