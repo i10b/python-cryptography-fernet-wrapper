@@ -26,3 +26,12 @@ class Wrapper:
         key = base64.urlsafe_b64encode(kdf.derive(password))
         return key
 
+    def encrypt(self, data, key):
+        f = Fernet(key)
+        token = f.encrypt(bytes(data, 'utf-8'))
+        return token
+
+    def decrypt(self, token, key):
+        f = Fernet(key)
+        data = f.decrypt(token)
+        return data
