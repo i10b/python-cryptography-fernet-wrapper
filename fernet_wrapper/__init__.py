@@ -11,9 +11,12 @@ class Wrapper:
         key = Fernet.generate_key()
         return key
 
-    def key_from_pass(password):
+    def key_from_pass(password, unique=False):
         password = bytes(password, 'utf-8')
-        salt = os.urandom(16)
+        if unique:
+            salt = os.urandom(16)
+        else:
+            salt = b'0\xc03T\xb8\x9a\xf9\xcb\xf4\xf8\xc7\x00a\xd6\xa7M'
         kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
             length=32,
