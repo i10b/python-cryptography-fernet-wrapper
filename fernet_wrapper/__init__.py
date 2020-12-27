@@ -12,6 +12,7 @@ class Wrapper:
         return key
 
     def key_from_pass(password):
+        password = bytes(password, 'utf-8')
         salt = os.urandom(16)
         kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
