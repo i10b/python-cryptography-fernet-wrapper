@@ -7,7 +7,7 @@ setuptools.setup(
     name="python-cryptography-fernet-wrapper",
     version="0.0.1",
     author="krazykirby99999",
-    description="A small example package",
+    description="A wrapper for cryptography.fernet",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/KrazyKirby99999/python-cryptography-fernet-wrapper",
