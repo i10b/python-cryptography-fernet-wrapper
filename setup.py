@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="python-cryptography-fernet-wrapper",
-    version="1.0.3",
+    version="1.0.4",
     author="krazykirby99999",
     description="A wrapper for cryptography.fernet",
     long_description=long_description,
