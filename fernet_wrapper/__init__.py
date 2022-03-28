@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 import base64
 import os
 from cryptography.fernet import Fernet
