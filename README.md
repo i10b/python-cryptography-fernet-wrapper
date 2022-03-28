@@ -28,3 +28,5 @@
     ```python
     key = fernet_wrapper.key_from_pass(password)
     ```
+
+Note: The license is GPL-3.0-or-later.
