@@ -9,8 +9,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 class Wrapper:
     def gen_key():
-        key = Fernet.generate_key()
-        return key
+        return Fernet.generate_key()
 
     def key_from_pass(password, unique=False):
         password = bytes(password, 'utf-8')
@@ -25,17 +24,15 @@ class Wrapper:
             iterations=100000,
             backend=default_backend()
         )
-        key = base64.urlsafe_b64encode(kdf.derive(password))
-        return key
+        return base64.urlsafe_b64encode(kdf.derive(password))
 
     def encrypt(data, key):
         f = Fernet(key)
-        token = f.encrypt(bytes(data, 'utf-8'))
-        return token
+        return f.encrypt(bytes(data, 'utf-8'))
 
     def decrypt(token, key):
         f = Fernet(key)
         data = str(f.decrypt(token))
-        if data[0:2] == "b'":
+        if data.startswith("b'"):
             data = data[2:-1]
         return data
